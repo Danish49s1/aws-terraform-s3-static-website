@@ -1,2 +1,39 @@
-# aws-terraform-s3-static-website
-Deploy a static food delivery website on AWS S3 using Terraform (Infrastructure as Code). Automates S3 bucket creation, public access configuration, and static website hosting setup.
+# 🌐 Static Website Hosting on AWS using Terraform
+
+This project deploys a **static food delivery website ("Fooding")** on **AWS S3** using **Terraform**.  
+It automates the setup of an S3 bucket, configures it for static website hosting, uploads files, and applies public access policies.
+
+---
+
+## 🚀 Project Overview
+
+- **Objective:** Host a static website on AWS using Infrastructure as Code (IaC)
+- **Tools Used:** Terraform, AWS S3, IAM
+- **Frontend:** HTML, CSS, JavaScript
+
+---
+
+## ⚙️ Features
+
+- Automated creation of S3 bucket and website configuration  
+- Public read permissions for all static content  
+- Upload of `index.html` and supporting files  
+- Outputs live S3 website endpoint after deployment  
+
+---
+
+## 🏗️ Terraform Configuration
+
+Key resources:
+- `aws_s3_bucket`
+- `aws_s3_bucket_policy`
+- `aws_s3_bucket_website_configuration`
+- `aws_s3_object`
+
+---
+
+## 📦 Deployment Steps
+
+1. Initialize Terraform  
+   ```bash
+   terraform init
