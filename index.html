@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fooding — Delicious Meals</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#ff6b35; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --radius:12px; --maxw:1100px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071022 0%,var(--bg) 100%);color:#e6eef8;line-height:1.5}
+    .wrap{max-width:var(--maxw);margin:32px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;background:linear-gradient(135deg,var(--accent),#ff9c6b);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#08101a}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    .cta{background:var(--accent);padding:10px 14px;border-radius:10px;color:#08101a;text-decoration:none;font-weight:700}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px;align-items:center}
+    .hero-left h1{font-size:34px;margin:0 0 12px}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .search{display:flex;gap:8px}
+    .search input{flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    .search button{padding:12px 14px;border-radius:10px;border:0;background:var(--accent);font-weight:700;color:#08101a}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),var(--glass));padding:18px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(3,6,14,0.7)}
+
+    .hero-right .promo{display:flex;flex-direction:column;gap:8px}
+    .promo .small{font-size:13px;color:var(--muted)}
+    .promo .big{font-size:20px;font-weight:700}
+
+    .menu{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .dish{display:flex;gap:12px;align-items:center}
+    .dish .thumb{width:84px;height:64px;border-radius:10px;background-size:cover;background-position:center;flex-shrink:0}
+    .dish h4{margin:0 0 6px;font-size:16px}
+    .price{margin-left:auto;background:#07182a;padding:8px 10px;border-radius:8px;font-weight:700}
+
+    .grid-2{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-top:22px}
+    .about p{color:var(--muted)}
+
+    footer{margin-top:36px;color:var(--muted);font-size:14px;text-align:center;padding:16px 0}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .menu{grid-template-columns:repeat(2,1fr)}
+      .grid-2{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      .menu{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+      nav{margin-top:8px}
+    }
+
+    /* small helpers */
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:700;color:var(--muted);font-size:13px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#08101a;font-weight:700;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">F</div>
+        <div>
+          <div style="font-weight:800">Fooding</div>
+          <div style="font-size:12px;color:var(--muted)">Fresh & tasty — local delivery</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Order Now</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Eat well. Live well.</h1>
+        <p>Delicious meals prepared with love — browse our menu, choose your favorites, and enjoy fast delivery.</p>
+        <div class="search card">
+          <input placeholder="Search dishes or ingredients..." aria-label="search" />
+          <button>Search</button>
+        </div>
+
+        <div class="menu" id="menu">
+          <div class="card dish">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=60')"></div>
+            <div>
+              <h4>Grilled Chicken Bowl</h4>
+              <div style="color:var(--muted);font-size:13px">Rice, veggies, zesty sauce</div>
+            </div>
+            <div class="price">₹299</div>
+          </div>
+
+          <div class="card dish">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1604908177522-6a2f2f7a4f8f?auto=format&fit=crop&w=800&q=60')"></div>
+            <div>
+              <h4>Margherita Pizza</h4>
+              <div style="color:var(--muted);font-size:13px">Classic cheese & basil</div>
+            </div>
+            <div class="price">₹449</div>
+          </div>
+
+          <div class="card dish">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1543353071-087092ec393a?auto=format&fit=crop&w=800&q=60')"></div>
+            <div>
+              <h4>Vegan Buddha Bowl</h4>
+              <div style="color:var(--muted);font-size:13px">Quinoa, tahini, roasted veg</div>
+            </div>
+            <div class="price">₹339</div>
+          </div>
+
+          <div class="card dish">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1542446016-3d1b8fc8b1e8?auto=format&fit=crop&w=800&q=60')"></div>
+            <div>
+              <h4>Butter Chicken</h4>
+              <div style="color:var(--muted);font-size:13px">Creamy tomato curry & naan</div>
+            </div>
+            <div class="price">₹379</div>
+          </div>
+
+          <div class="card dish">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1516685018646-549d7b4bdb8f?auto=format&fit=crop&w=800&q=60')"></div>
+            <div>
+              <h4>Paneer Tikka Wrap</h4>
+              <div style="color:var(--muted);font-size:13px">Smoky paneer, fresh chutney</div>
+            </div>
+            <div class="price">₹219</div>
+          </div>
+
+          <div class="card dish">
+            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1528731708534-816fe59f90a7?auto=format&fit=crop&w=800&q=60')"></div>
+            <div>
+              <h4>Chocolate Lava Cake</h4>
+              <div style="color:var(--muted);font-size:13px">Warm, gooey delight</div>
+            </div>
+            <div class="price">₹149</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card promo">
+          <div class="small">Today's Special</div>
+          <div class="big">Sizzling BBQ Platter</div>
+          <div style="color:var(--muted);font-size:13px">Perfect for two — limited time only.</div>
+          <div style="margin-top:12px"><a class="btn" href="#contact">Order Now</a></div>
+        </div>
+
+        <div style="height:16px"></div>
+
+        <div class="card" style="padding:14px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:56px;height:56px;border-radius:10px;background-image:url('https://images.unsplash.com/photo-1548946526-f69e2424cf45?auto=format&fit=crop&w=800&q=60');background-size:cover"></div>
+            <div>
+              <div style="font-weight:700">Fast Delivery</div>
+              <div style="color:var(--muted);font-size:13px">Under 30 mins in the city</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid-2" id="about">
+      <div class="card about">
+        <h3>About Fooding</h3>
+        <p>Fooding is a small neighbourhood kitchen focused on fresh ingredients, bold flavours, and friendly service. We cook daily — from comfort food to healthy bowls.</p>
+
+        <h4 style="margin-top:16px">How it works</h4>
+        <ol style="color:var(--muted)">
+          <li>Browse the menu and add items to cart.</li>
+          <li>Choose pickup or delivery.</li>
+          <li>Enjoy — we handle the cooking and the rest.</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h4>Contact & Hours</h4>
+        <div style="color:var(--muted);margin-bottom:10px">Mon–Sun • 10:00 — 22:00</div>
+        <div style="font-weight:700">Reach us</div>
+        <div style="color:var(--muted);font-size:14px">Phone: +91 98765 43210</div>
+        <div style="margin-top:12px"><a class="tag" href="#">View Full Menu</a></div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div style="margin-bottom:8px">Made with ❤️ — Fooding</div>
+      <div style="color:var(--muted)">This is a single-file demo. Replace images with your own for production.</div>
+    </footer>
+  </div>
+</body>
+</html>
