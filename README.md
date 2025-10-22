@@ -37,3 +37,9 @@ Key resources:
 1. Initialize Terraform  
    ```bash
    terraform init
+2. Apply the configuration
+     ```bash
+   terraform apply -auto-approve
+4. Get the website URL
+   ```bash
+   terraform output name
